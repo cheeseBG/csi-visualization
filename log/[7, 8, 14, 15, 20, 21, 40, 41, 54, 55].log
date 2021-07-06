@@ -1,0 +1,68 @@
+2021-05-09 16:53:50,289 - root - INFO - 
+subcarriers: [7, 8, 14, 15, 20, 21, 40, 41, 54, 55]
+2021-05-09 16:53:50,289 - root - INFO - 
+Best parameters: {'C': 1.0, 'gamma': 1.0, 'kernel': 'poly'}
+2021-05-09 16:53:50,289 - root - INFO - 
+[[101   1]
+ [  5  93]]
+2021-05-09 16:53:50,291 - root - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.95      0.99      0.97       102
+           1       0.99      0.95      0.97        98
+
+    accuracy                           0.97       200
+   macro avg       0.97      0.97      0.97       200
+weighted avg       0.97      0.97      0.97       200
+
+2021-05-09 17:15:49,913 - root - INFO - 
+subcarriers: [7, 8, 14, 15, 20, 21, 40, 41, 54, 55]
+2021-05-09 17:15:49,913 - root - INFO - 
+Best parameters: {'C': 1.0, 'gamma': 1.0, 'kernel': 'poly'}
+2021-05-09 17:15:49,914 - root - INFO - 
+[[384   1]
+ [  2 413]]
+2021-05-09 17:15:49,916 - root - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      1.00       385
+           1       1.00      1.00      1.00       415
+
+    accuracy                           1.00       800
+   macro avg       1.00      1.00      1.00       800
+weighted avg       1.00      1.00      1.00       800
+
+2021-05-09 20:52:38,687 - root - INFO - 
+subcarriers: [7, 8, 14, 15, 20, 21, 40, 41, 54, 55]
+2021-05-09 20:52:38,687 - root - INFO - 
+Best parameters: {'C': 1.0, 'gamma': 1.0, 'kernel': 'poly'}
+2021-05-09 20:52:38,688 - root - INFO - 
+[[590   1]
+ [ 13 596]]
+2021-05-09 20:52:38,690 - root - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99       591
+           1       1.00      0.98      0.99       609
+
+    accuracy                           0.99      1200
+   macro avg       0.99      0.99      0.99      1200
+weighted avg       0.99      0.99      0.99      1200
+
+2021-05-10 19:10:25,125 - root - INFO - 
+subcarriers: [7, 8, 14, 15, 20, 21, 40, 41, 54, 55]
+2021-05-10 19:10:25,125 - root - INFO - 
+Best parameters: {'C': 1.0, 'gamma': 1.0, 'kernel': 'poly'}
+2021-05-10 19:10:25,128 - root - INFO - 
+[[4303  103]
+ [ 520 3774]]
+2021-05-10 19:10:25,136 - root - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.89      0.98      0.93      4406
+           1       0.97      0.88      0.92      4294
+
+    accuracy                           0.93      8700
+   macro avg       0.93      0.93      0.93      8700
+weighted avg       0.93      0.93      0.93      8700
+
