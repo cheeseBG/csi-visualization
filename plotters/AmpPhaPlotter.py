@@ -1,3 +1,7 @@
+'''
+ zeroby0's code
+'''
+
 import numpy as np
 import matplotlib.pyplot as plt
 import config

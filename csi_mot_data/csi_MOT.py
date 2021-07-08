@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 
-f1 = pd.read_csv('./csi_mot_data/outputs.csv', encoding='utf-8', header=None)
+f1 = pd.read_csv('outputs.csv', encoding='utf-8', header=None)
 f1 = f1.drop([f1.columns[0]], axis='columns')
 f2 = open('0512_results.txt', 'r', encoding='utf-8')  # MOT
 

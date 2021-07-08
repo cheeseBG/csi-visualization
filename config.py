@@ -1,3 +1,7 @@
+'''
+ zeroby0's code
+'''
+
 # Basic Configuration
 # ===================
 
@@ -5,7 +9,7 @@
 # ---------------------------------------
 
 # chip = 'bcm4339'    # Nexus 5
-chip = 'bcm43455c0' # Raspberry Pi 3B+ and 4B
+chip = 'bcm43455c0'  # Raspberry Pi 3B+ and 4B
 # chip = 'bcm4358'    # Nexus 6P
 # chip = 'bcm4366c0'  # Asus RT-AC86U
 
@@ -21,7 +25,7 @@ pcap_fileroot = 'pcapfiles'
 
 print_samples = True  # Set this to False to stop printing to terminal
 plot_samples = True   # Set this to False to stop plotting
-plot_animation_delay_s = 0.005 # Delay between csi plots.
+plot_animation_delay_s = 0.005  # Delay between csi plots.
 
 # Setting this option to True removes Null Subcarriers.
 # Null subcarriers have arbitrary values, and are used to
@@ -35,9 +39,6 @@ remove_null_subcarriers = True
 # to the rest, and so I remove them. You may not necessarily
 # face such issues.
 remove_pilot_subcarriers = False
-
-
-
 
 # Advanced configuration. You don't need to change this
 # =====================================================
