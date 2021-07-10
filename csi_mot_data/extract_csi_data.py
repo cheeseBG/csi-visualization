@@ -1,3 +1,5 @@
+import importlib
+
 from scapy.all import *
 import config
 import pandas as pd
@@ -42,8 +44,6 @@ if __name__ == "__main__":
         + '.' + str(int(arr_time % 1 * (10 ** num))))
 
     csi_df.insert(0, 'time_stamp', new_timestamp)
-
-    print(csi_df)
 
     # Save dataframe to excel file
     try:
