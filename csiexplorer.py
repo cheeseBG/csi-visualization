@@ -6,6 +6,7 @@ from plotters.timePlotter import TimePlotter
 from plotters.heatmap import Heatmap
 decoder = importlib.import_module(f'decoders.{config.decoder}') # This is also an import
 
+
 def string_is_int(s):
     '''
     Check if a string is an integer
