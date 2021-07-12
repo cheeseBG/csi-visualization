@@ -5,8 +5,10 @@ import config
 import pandas as pd
 import numpy as np
 import time
+from tracking_db import tracking_db
 decoder = importlib.import_module(f'decoders.{config.decoder}') # This is also an import
 
+db = tracking_db()
 
 def func(pkt):
     global limit, count, timestamps
@@ -37,16 +39,24 @@ if __name__ == "__main__":
 
     sniff(offline=filename, stop_filter=func, store=False)
 
-    new_timestamp = []
-    for arr_time in timestamps:
-        num = len(str(arr_time % 1)) - 2
-        new_timestamp.append(time.strftime("%a, %d %b %Y %H:%M:", time.localtime(arr_time)) + time.strftime("%S", time.localtime(arr_time))\
-        + '.' + str(int(arr_time % 1 * (10 ** num))))
+    # Decimal to Float
+    ts_decimaltofloat = list(map(float, timestamps))
+    timestamps_new = []
+    for ts in ts_decimaltofloat:
+        timestamps_new.append(datetime.fromtimestamp(ts))
 
-    csi_df.insert(0, 'time_stamp', new_timestamp)
+    # Insert Timestamps
+    csi_df.insert(0, 'time', timestamps_new)
 
-    # Save dataframe to excel file
+    # Rename Subcarriers Column Name
+    columns = {}
+    for i in range(0, 64):
+        columns[i] = '_' + str(i)
+
+    csi_df.rename(columns=columns, inplace=True)
+
+    # Save dataframe to SQL
     try:
-        csi_df.to_csv('outputs.csv')
-    except:
-        print('Fail to save data')
+        db.insert_csi(csi_df)
+    except Exception as e:
+        print('Fail to save data\n', e)
