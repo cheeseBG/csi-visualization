@@ -6,7 +6,6 @@ output_df = output_df.drop([output_df.columns[0]], axis='columns')  # remove ind
 output_df = output_df.drop(0, axis='rows')  # remove column name (first row)
 output_df.reset_index(drop=True, inplace=True)
 output_df.columns = output_df.columns - 1
-print(output_df)
 
 
 result_f = open('results.txt', 'r', encoding='utf-8')  # MOT
@@ -23,16 +22,16 @@ while result_f:  # MOT
     else:
         break
 
-print(result_time)
-
 label = []
 for i in output_time:
     fre = [0, 0]
     flag = 0
     for j in result_time.keys():
-        if i[:10] == j[:10]:
+        #if i[:10] == j[:10]:  ## 날짜 비교
+        if 1 == 1:
 
-            output_second = i.split(' ')[1].split(':')
+            #output_second = i.split(' ')[1].split(':')
+            output_second = i[17:].split(':')
             result_second = j.split(' ')[1].split(':')
 
             if int(output_second[0]) == int(result_second[0]) and int(float(output_second[1])) == int(float(result_second[1])):
@@ -47,6 +46,7 @@ for i in output_time:
         label.append(-1)
     else:
         label.append(fre.index(max(fre)))
+print(label)
 
 # ========== 학습 모델 ========== #
 #
