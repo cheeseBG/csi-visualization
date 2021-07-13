@@ -5,9 +5,7 @@ output_df = pd.read_csv('outputs.csv', encoding='utf-8', header=None)
 output_df = output_df.drop([output_df.columns[0]], axis='columns')  # remove index column
 output_df = output_df.drop(0, axis='rows')  # remove column name (first row)
 output_df.reset_index(drop=True, inplace=True)
-output_df.columns = output_df.columns - 1
-print(output_df)
-
+output_df.columns -= 1
 
 result_f = open('results.txt', 'r', encoding='utf-8')  # MOT
 
@@ -19,11 +17,9 @@ result_time = dict()
 while result_f:  # MOT
     line = result_f.readline().split()
     if len(line) != 0:
-        result_time[line[0] + ' ' + line[1]] = line[2]
+        result_time[line[0]] = line[1]
     else:
         break
-
-print(result_time)
 
 label = []
 for i in output_time:
