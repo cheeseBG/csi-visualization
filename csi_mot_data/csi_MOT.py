@@ -8,10 +8,10 @@ output_df.reset_index(drop=True, inplace=True)
 
 output_df.columns -= 1
 
-
 result_f = open('results.txt', 'r', encoding='utf-8')  # MOT
 
 output_time = output_df[0].tolist()
+output_time = list(map(float, output_time))
 
 # MOT를 다 읽고, CSI는 한 줄씩 읽기
 result_time = dict()
@@ -24,24 +24,18 @@ while result_f:  # MOT
         break
 
 label = []
-for i in output_time:
+threshold = 0.5  # error threshold
+
+for video_time in output_time:
     fre = [0, 0]
     flag = 0
-    for j in result_time.keys():
-        #if i[:10] == j[:10]:  ## 날짜 비교
-        if 1 == 1:
+    for csi_time in result_time.keys():
 
-            #output_second = i.split(' ')[1].split(':')
-            output_second = i[17:].split(':')
-            result_second = j.split(' ')[1].split(':')
-
-            if int(output_second[0]) == int(result_second[0]) and int(float(output_second[1])) == int(float(result_second[1])):
-
-                if abs(float(result_second[2]) - float(output_second[2])) < 0.5:
-                    flag = 1
-                    fre[int(result_time[j])] += 1
-                elif flag == 1:
-                    break
+        if abs(video_time - float(csi_time)) < threshold:
+            flag = 1
+            fre[int(result_time[csi_time])] += 1
+        elif flag == 1:
+            break
 
     if max(fre) == 0:
         label.append(-1)

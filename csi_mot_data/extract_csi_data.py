@@ -53,7 +53,6 @@ if __name__ == "__main__":
 
     # Insert Timestamps
     csi_df.insert(0, 'time', ts_decimaltofloat)
-    print(csi_df)
 
     # Save dataframe to excel file
     try:
