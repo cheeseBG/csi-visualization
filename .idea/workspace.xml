@@ -3,13 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="6767c173-cb14-4d93-bfa4-fa12dfc384db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csi_mot_data/csi_MOT.py" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/csi_labeling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csi_mot_data/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csi_mot_data/extract_csi_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/extract_csi_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csi_mot_data/outputs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/data/outputs.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csi_mot_data/results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/data/results.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csi_mot_data/tracking_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/tracking_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csi_mot_data/zNex~$hareoutputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/train/DNN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csiML.py" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/train/csiML.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csi_mot/csi_labeling.py" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/train/data/csi_labeling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csi_mot/data/outputs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/train/data/outputs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csi_mot/data/results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/train/data/results.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csi_mot/extract_csi_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/train/data/extract_csi_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/generateDB.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sub1[7, 8, 14, 15, 20, 21, 40, 41, 54, 55].xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sub2[7, 8, 14, 15, 20, 21, 40, 41, 54, 55].xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sub3[7, 8, 14, 15, 20, 21, 40, 41, 54, 55].xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sub[7, 8, 14, 15, 20, 21, 40, 41, 54, 55].xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/[7, 8, 14, 15, 20, 21, 40, 41, 54, 55].log" beforeDir="false" afterPath="$PROJECT_DIR$/csi_mot/train/log/[7, 8, 14, 15, 20, 21, 40, 41, 54, 55].log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csi_mot/extract_csi_data.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/csi_mot/train/data/extract_csi_data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
-              <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+              <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -31,11 +37,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/csi_mot/csi_labeling.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/csi_mot/train/csiML.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/csi_mot/train/data/generateDB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1691">
-              <caret line="89" column="56" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
+            <state relative-caret-position="190">
+              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -44,25 +55,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csiML.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DNN.py">
+        <entry file="file://$PROJECT_DIR$/csi_mot/train/data/csi_labeling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+            <state relative-caret-position="57">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csi_mot/tracking_db.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -77,6 +78,8 @@
         <option value="$PROJECT_DIR$/csi_mot_data/csi_MOT.py" />
         <option value="$PROJECT_DIR$/csi_mot/extract_csi_data.py" />
         <option value="$PROJECT_DIR$/csi_mot/csi_labeling.py" />
+        <option value="$PROJECT_DIR$/csi_mot/train/data/csi_labeling.py" />
+        <option value="$PROJECT_DIR$/csi_mot/train/data/extract_csi_data.py" />
       </list>
     </option>
   </component>
@@ -92,7 +95,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="1073" />
+    <option name="width" value="1477" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -112,6 +115,19 @@
               <item name="csi_analyze" type="462c0819:PsiDirectoryNode" />
               <item name="csi_mot" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="csi_analyze" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csi_analyze" type="462c0819:PsiDirectoryNode" />
+              <item name="csi_mot" type="462c0819:PsiDirectoryNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csi_analyze" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csi_analyze" type="462c0819:PsiDirectoryNode" />
+              <item name="csi_mot" type="462c0819:PsiDirectoryNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -126,6 +142,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jji44\Documents\GitHub\csi_analyze\csi_mot\train\data" />
+      <recent name="C:\Users\jji44\Documents\GitHub\csi_analyze\csi_mot\train" />
+      <recent name="C:\Users\jji44\Documents\GitHub\csi_analyze\csi_mot" />
       <recent name="C:\Users\jji44\Documents\GitHub\csi_analyze\csi_mot\data" />
     </key>
   </component>
@@ -155,15 +174,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="858" height="830" extended-state="0" />
+    <frame x="-6" y="0" width="1181" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24087591" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33100438" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29369628" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24068768" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -188,21 +207,12 @@
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/csi_mot/data/results.txt">
+    <entry file="file://$PROJECT_DIR$/csi_mot/train/data/results.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/csi_mot/data/outputs.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csi_mot/tracking_db.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csiML.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DNN.py">
+    <entry file="file://$PROJECT_DIR$/csi_mot/train/DNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
+        <state relative-caret-position="152">
           <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
@@ -210,25 +220,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/csi_mot/tracking_db.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/csi_mot/database.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/csi_mot/extract_csi_data.py">
+    <entry file="file://$PROJECT_DIR$/csi_mot/train/data/outputs.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csi_mot/train/log/[7, 8, 14, 15, 20, 21, 40, 41, 54, 55].log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-930" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/screenshot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csi_mot/train/csiML.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csi_mot/train/data/generateDB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        <state relative-caret-position="190">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csi_mot/csi_labeling.py">
+    <entry file="file://$PROJECT_DIR$/csi_mot/train/data/csi_labeling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1691">
-          <caret line="89" column="56" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csi_mot/train/data/extract_csi_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>

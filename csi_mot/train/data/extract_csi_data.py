@@ -10,6 +10,9 @@ decoder = importlib.import_module(f'decoders.{config.decoder}') # This is also a
 
 #db = tracking_db()
 
+# ToDo: 함수로 만들기
+#def pcap_to_df(pcap_filename):
+
 pcap_filename = "class_0.pcap"
 
 

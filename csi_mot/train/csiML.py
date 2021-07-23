@@ -1,8 +1,6 @@
 import logging
 import pandas as pd
-import importlib
-import config
-import data.generateDB as db
+import csi_mot.train.data.generateDB as db
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc
 from sklearn.metrics import classification_report, confusion_matrix

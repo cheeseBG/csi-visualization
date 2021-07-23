@@ -1,12 +1,8 @@
 import pandas as pd
 import tensorflow as tf
-import data.generateDB as db
-import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc
-from sklearn.metrics import classification_report, confusion_matrix
+import csi_mot.train.data.generateDB as db
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
-import numpy as np
 
 data_filename = 'sub' + str(db.file_name) + '.xlsx'
 data_filepath = '/'.join(['data', data_filename])
