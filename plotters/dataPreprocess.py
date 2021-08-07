@@ -1,5 +1,6 @@
 from sklearn.preprocessing import MinMaxScaler
 
+
 def data_preprocess(csi_df):
 
     # Min-Max Normalization

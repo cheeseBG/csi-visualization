@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import config
+from plotters.dataPreprocess import data_preprocess
 
 '''
 Time plotter
@@ -18,6 +19,9 @@ class TimePlotter():
     def __init__(self, bandwidth, subcarrier):
         self.bandwidth = bandwidth
         self.subcarrier = subcarrier
+
+        # Todo: preprocssing 적용
+
 
         self.x_amp = np.arange(0, len(subcarrier))
         self.x_pha = np.arange(0, len(subcarrier))

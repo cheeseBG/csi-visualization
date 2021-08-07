@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import config
 import pandas as pd
-from preprocessing import data_preprocess
+from plotters.dataPreprocess import data_preprocess
 
 '''
 Heatmap

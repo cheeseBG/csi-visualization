@@ -88,16 +88,18 @@ if __name__ == "__main__":
         elif plot_mode == '3':
             pre = input('Data Preprocessing (True or False):  ')
 
+
             hm = Heatmap(samples.bandwidth, samples.get_all_csi(
                 config.remove_null_subcarriers,
                 config.remove_pilot_subcarriers))
 
-            if pre is True:
+            if pre == 'True':
                 hm.plot(preprocess=True)
-            elif pre is False:
+            elif pre == 'False':
                 hm.plot()
             else:
-                print('Wrong input!')
+                print("Wrong input!")
+
         elif plot_mode == '4':
             break
         else:
