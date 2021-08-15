@@ -86,10 +86,20 @@ if __name__ == "__main__":
             #sub_carrier = samples.get_subcarrier(int(sub))
             timePlotter.plot()
         elif plot_mode == '3':
+            pre = input('Data Preprocessing (True or False):  ')
+
+
             hm = Heatmap(samples.bandwidth, samples.get_all_csi(
                 config.remove_null_subcarriers,
                 config.remove_pilot_subcarriers))
-            hm.plot()
+
+            if pre == 'True':
+                hm.plot(preprocess=True)
+            elif pre == 'False':
+                hm.plot()
+            else:
+                print("Wrong input!")
+
         elif plot_mode == '4':
             break
         else:

@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import config
 import pandas as pd
-import seaborn as sns
+from plotters.dataPreprocess import data_preprocess
 
 '''
 Heatmap
@@ -27,10 +27,13 @@ class Heatmap():
         if config.remove_null_subcarriers and bandwidth == 20:
             self.nsub -= 8
 
-    def plot(self):
+    def plot(self, preprocess=False):
 
         df = pd.DataFrame(np.abs(self.csi))
         #df = df[:20000]
+
+        if preprocess is True:
+            df = data_preprocess(df)
 
         plt.pcolor(df)
         #plt.xticks(np.arange([-32, -16, 0, 16, 32]))
