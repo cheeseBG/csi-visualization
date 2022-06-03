@@ -49,8 +49,8 @@ time_ms_list = [
 # data_path = '../data'
 # data_path = os.path.join(data_path, test_name, 'csi')
 
-test_name = 'pe'
-data_path = '../data'
+test_name = 'sample'
+data_path = './data'
 data_path = os.path.join(data_path, test_name)
 
 csi_list = os.listdir(data_path)
