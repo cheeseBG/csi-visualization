@@ -12,9 +12,9 @@ CSI explore
 
 ![ampPlot](./asset/ampPlot.png)
 
-Create Data
+Real-Time Amplitude plot
 -----
-
+![realAmp](./asset/)
 
 Classification with ML
 -----
