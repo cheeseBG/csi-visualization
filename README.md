@@ -1,6 +1,6 @@
 # csi_analyze
 
-📊CSI analyze & classification with python
+📊 CSI visualization with python
 
 CSI explore
 -----
@@ -14,11 +14,6 @@ CSI explore
 
 Real-Time Amplitude plot
 -----
-![realAmp](./asset/)
+![realAmp](./asset/realPlot.gif)
 
-Classification with ML
------
-
-Classification with DL
------
 
