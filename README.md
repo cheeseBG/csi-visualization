@@ -1,4 +1,4 @@
-# csi_analyze
+# csi_visualization
 
 📊 CSI visualization with python
 
