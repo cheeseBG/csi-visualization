@@ -1,6 +1,6 @@
 # csi_visualization
 
-📊 CSI visualization with python
+📊 Channel State Information(CSI) visualization with python
 
 CSI explore
 -----
