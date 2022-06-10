@@ -4,20 +4,23 @@
 
 CSI explore
 -----
-1. Heatmap(Amplitude-Time)
+1. Heatmap (Amplitude-Time)
 
-![ampHeat](./asset/ampHeat.png){: width="100px" height="100px"}
+<img src="./asset/ampHeat.png" width="400" height="250"/>
 
 2. Amplitude-Time
 
-![ampPlot](./asset/ampPlot.png){: width="100px" height="100px"}
+<img src="./asset/ampPlot.png" width="400" height="250"/>
 
-3. Amplitude-SubcarrierIdx
+3. Amplitude-SubcarrierIdx (all packet)
 
-![ampSub](./asset/ampSub.png){: width="100px" height="100px"}
+<img src="./asset/ampSub.png" width="400" height="250"/>
+
+4.Amplitude-SubcarrierIdx Flow (single antenna set)
+
+
 
 Real-Time Amplitude plot
 -----
-![realAmp](./asset/realPlot.gif){: width="100px" height="100px"}
-
+<img src="./asset/realPlot.gif" width="400" height="250"/>
 
