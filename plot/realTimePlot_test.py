@@ -2,12 +2,12 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
 from matplotlib.artist import Artist
 import time
 from datetime import datetime
 
 def AmpRTPlotter(csi_df, spf_sub=None):
+    csi_df = complexToAmp(csi_df)
     subcarrier_list = []
     for col in csi_df.columns:
         subcarrier_list.append(csi_df[col].to_list())
@@ -80,6 +80,14 @@ def AmpRTPlotter(csi_df, spf_sub=None):
         time.sleep(0.01)
 
 
+def complexToAmp(comp_df):
+
+    comp_df = comp_df.astype('complex')
+    amp_df = comp_df.apply(np.abs, axis=1)
+
+    return amp_df
+
+
 if __name__ == '__main__':
     # Path
     test_name = 'sample'
@@ -102,6 +110,3 @@ if __name__ == '__main__':
     # csi_df.drop(null_pilot_col_list, axis=1, inplace=True)
 
     AmpRTPlotter(csi_df)
-
-
-

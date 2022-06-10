@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+import numpy as np
 
 from plot.dataPreprocess import data_preprocess
 from datetime import datetime
@@ -61,6 +62,59 @@ def AmpPlotter(csi_df, sample_start, sample_end, isComp, spf_sub=None):
         ax.set_ylabel('Signal Amplitude', fontsize=16)
         ax.set_xlabel('Sample Index', fontsize=16)
         plt.show()
+
+
+def AmpSubcarrierFlowPlotter(csi_df, isComp):
+
+    if isComp == 'y':
+        csi_df = complexToAmp(csi_df)
+
+    x = np.arange(0, 64, 1)
+    y_list = []
+
+    for packet in np.array(csi_df):
+        y_list.append(list(packet))
+
+    plt.ion()
+
+    fig, ax = plt.subplots(figsize=(12, 8))
+    fig.suptitle('Amp-SubcarrierIdx plot')
+    line, = ax.plot(x, y_list[0], alpha=0.5)
+
+    plt.ylabel('Signal Amplitude', fontsize=16)
+    plt.xlabel('Subcarrier Index', fontsize=16)
+    plt.ylim(0, 1500)
+
+    for i in range(1, len(y_list)):
+        update_y = y_list[i]
+
+        line.set_xdata(x)
+        line.set_ydata(update_y)
+
+        fig.canvas.draw()
+        fig.canvas.flush_events()
+
+        time.sleep(0.01)
+
+
+def AmpSubcarrierPlotter(csi_df, isComp):
+
+    if isComp == 'y':
+        csi_df = complexToAmp(csi_df)
+
+    packet_list = []
+    for packet in np.array(csi_df):
+        packet_list.append(list(packet))
+
+    fig, ax = plt.subplots(figsize=(12, 8))
+    fig.suptitle('Amp-SubcarrierIdx plot')
+
+    for idx, sub in enumerate(packet_list):
+        ax.plot(sub, alpha=0.5)
+
+    ax.set_ylabel('Signal Amplitude', fontsize=16)
+    ax.set_xlabel('Subcarrier Index', fontsize=16)
+    plt.show()
 
 
 def AmpTimePlotter(csi_df, time_list, time_ms_list, isComp, spf_sub=None):
