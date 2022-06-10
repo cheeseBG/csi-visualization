@@ -18,6 +18,7 @@ CSI explore
 
 4.Amplitude-SubcarrierIdx Flow (single antenna set)
 
+<img src="./asset/ampSubFlow.gif" width="400" height="250"/>
 
 
 Real-Time Amplitude plot
