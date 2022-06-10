@@ -15,41 +15,9 @@ from plot.heatmap import heatmap, timeHeatmap
 '''
 # For Test time section, set milestone
 time_ms_list = [
-    # ######### Test1 ###########
-
-    # '2022-04-06 13:55:40',  # Start
-    # '2022-04-06 13:55:47',  # Leave Left-Bottom
-    # '2022-04-06 13:55:53',  # Arrive Right-Top
-    # '2022-04-06 13:55:58',  # Leave Right-Top
-    # '2022-04-06 13:56:01',  # Arrive Right-Bottom
-    # '2022-04-06 13:56:07',  # End
-
-    # ######### Test2 ###########
-
-    # '2022-04-06 16:46:14',  # Start
-    # '2022-04-06 16:46:32',  # Leave Left-Bottom
-    # '2022-04-06 16:46:36',  # Arrive Right-Top
-    # '2022-04-06 16:46:53',  # Leave Right-Top
-    # '2022-04-06 16:46:55',  # Arrive Right-Bottom
-    # '2022-04-06 16:47:22',  # End
-
-    # ######### Test3_3rasp ###########
-    
-    # '2022-04-06 17:00:00',  # Start
-    # '2022-04-06 17:01:00',  # Leave Left-Bottom
-    # '2022-04-06 17:01:04',  # Arrive Middle-Top
-    # '2022-04-06 17:02:01',  # Leave Middle-Top
-    # '2022-04-06 17:02:04',  # Arrive Right-Bottom
-    # '2022-04-06 17:03:07',  # End
-
     '2022-05-02 16:53:04',  # Start
     '2022-05-02 16:54:00',  # End
 ]
-
-# Path
-# test_name = '0502test'
-# data_path = '../data'
-# data_path = os.path.join(data_path, test_name, 'csi')
 
 test_name = 'sample'
 data_path = './data'
@@ -95,10 +63,7 @@ if __name__ == "__main__":
     df = pd.read_csv(data_path)
 
     # Remove MAC address, timestamp
-    # csi_df = df.iloc[:, 2:]
-
-    # Remove MAC address, timestamp, label
-    csi_df = df.iloc[:, 2:-1]
+    csi_df = df.iloc[:, 2:]
 
     # Create timestamp list
     time_list = df['time'].tolist()
