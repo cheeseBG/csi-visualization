@@ -4,13 +4,17 @@
 
 CSI explore
 -----
-1. Heatmap
+1. Heatmap(Amplitude-Time)
 
 ![ampHeat](./asset/ampHeat.png)
 
-2. Amplitude
+2. Amplitude-Time
 
 ![ampPlot](./asset/ampPlot.png)
+
+3. Amplitude-SubcarrierIdx
+
+![ampSub](./asset/ampSub.png)
 
 Real-Time Amplitude plot
 -----
