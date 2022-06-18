@@ -1,18 +1,10 @@
 '''
     Configuration of Extractor and plot parameters
 '''
-# Setting this option to True removes Null Subcarriers.
-# Null subcarriers have arbitrary values, and are used to
-# help WiFi co-exist with other wireless technologies.
-# https://www.oreilly.com/library/view/80211ac-a-survival/9781449357702/ch02.html
-remove_null_subcarriers = True
 
-# Pilot subcarriers are used to control the WiFi link,
-# while other subcarriers carry data. I found pilot
-# subcarriers sometimes have inconsistent CSI compared
-# to the rest, and so I remove them. You may not necessarily
-# face such issues.
-remove_pilot_subcarriers = False
+
+rm_null_sub = True
+rm_pilot_sub= True
 
 EXTRACTOR_CONFIG = {
     'wifi_chip': 'bcm43455c0',  # Raspberry Pi B3+ / B4
