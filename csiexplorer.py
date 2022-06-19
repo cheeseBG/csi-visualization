@@ -5,14 +5,6 @@ import pandas as pd
 from plot.ampPlotter import AmpPlotter, AmpTimePlotter
 from plot.heatmap import heatmap, timeHeatmap
 
-'''
-   <<  Null & Pilot subcarriers on 2.4MHz >>
-    
-    Null: [x+32 for x in [-32, -31, -30, -29, 31,  30,  29,  0]]
-    Pilot: [x+32 for x in [-21, -7, 21,  7]]
-    
-    Available number of subcarriers: 64-12 = 52
-'''
 # For Test time section, set milestone
 time_ms_list = [
     '2022-05-02 16:53:04',  # Start
