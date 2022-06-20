@@ -2,13 +2,17 @@ import os
 import argparse
 import pandas as pd
 
+from cfg import config
 from plot.ampPlotter import AmpPlotter, AmpTimePlotter
 from plot.heatmap import heatmap, timeHeatmap
 
+plot_params_dict = config.PLOT_PARAMETER
+
+time_ms_list = plot_params_dict['time']
+
 # For Test time section, set milestone
 time_ms_list = [
-    '2022-05-02 16:53:04',  # Start
-    '2022-05-02 16:54:00',  # End
+
 ]
 
 test_name = 'sample'

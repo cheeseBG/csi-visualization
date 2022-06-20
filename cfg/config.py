@@ -8,7 +8,10 @@ PLOT_PARAMETER = {
     'del_null_sub': True,  # Delete null subcarriers
     'del_pilot_sub': True,  # Delete pilot subcarriers
 
-    'time': []
+    'time': [
+            '2022-05-02 16:53:04',  # Start
+            '2022-05-02 16:54:00'   # End
+    ]
 }
 
 
