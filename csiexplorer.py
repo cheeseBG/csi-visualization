@@ -10,11 +10,6 @@ plot_params_dict = config.PLOT_PARAMETER
 
 time_ms_list = plot_params_dict['time']
 
-# For Test time section, set milestone
-time_ms_list = [
-
-]
-
 test_name = 'sample'
 data_path = './data'
 data_path = os.path.join(data_path, test_name)
