@@ -2,8 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import time
-
-from plot.dataPreprocess import data_preprocess
 from datetime import datetime
 '''
 Heatmap

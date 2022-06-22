@@ -2,8 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 import numpy as np
-
-from plot.dataPreprocess import data_preprocess
+import pywt
 from datetime import datetime
 
 
@@ -23,28 +22,31 @@ def lowpassfilter(signal, thresh=0.63, wavelet="db4"):
     return reconstructed_signal
 
 
-def AmpPlotter(csi_df, sample_start, sample_end, isComp, spf_sub=None):
+def AmpPlotter(csi_df, sample_start, sample_end, spf_sub_list=None):
 
     csi_df = csi_df[sample_start:sample_end]
 
-    if isComp == 'y':
-        csi_df = complexToAmp(csi_df)
+    # Convert complex number to amplitude
+    csi_df = complexToAmp(csi_df)
 
-    if spf_sub is not None:
-        subcarrier = csi_df[spf_sub].to_list()
+    if spf_sub_list is not None:
+        sub_csi_list = []
+
+        for sub in spf_sub_list:
+            sub_csi_list.append([sub, csi_df[sub].to_list()])
 
         # ============ Denoising with DWT ==================
-        signal = subcarrier
 
         fig, ax = plt.subplots(figsize=(12, 8))
-        fig.suptitle('Amp-SampleIndex plot')
-        ax.plot(signal, color="b", alpha=0.5, label=spf_sub)
-        rec = lowpassfilter(signal, 0.2)
-        ax.plot(rec, 'k', label='DWT smoothing}', linewidth=2)
+        fig.suptitle('Amp-PacketIdx plot', fontsize=20)
+        for sub_csi in sub_csi_list:
+            ax.plot(sub_csi[1], alpha=0.5, label='sub ' + sub_csi[0])
+        # rec = lowpassfilter(signal, 0.2)
+        # ax.plot(rec, 'k', label='DWT smoothing}', linewidth=2)
         ax.legend()
-        ax.set_title('Removing High Frequency Noise with DWT', fontsize=18)
+        # ax.set_title('Removing High Frequency Noise with DWT', fontsize=18)
         ax.set_ylabel('Signal Amplitude', fontsize=16)
-        ax.set_xlabel('Sample Index', fontsize=16)
+        ax.set_xlabel('Packet Index', fontsize=16)
         plt.show()
     else:
         subcarrier_list = []
@@ -54,20 +56,20 @@ def AmpPlotter(csi_df, sample_start, sample_end, isComp, spf_sub=None):
         # ============ Denoising with DWT ==================
 
         fig, ax = plt.subplots(figsize=(12, 8))
-        fig.suptitle('Amp-SampleIndex plot')
+        fig.suptitle('Amp-PacketIdx plot', fontsize=20)
 
         for idx, sub in enumerate(subcarrier_list):
             ax.plot(sub, alpha=0.5, label=csi_df.columns[idx])
 
         ax.set_ylabel('Signal Amplitude', fontsize=16)
-        ax.set_xlabel('Sample Index', fontsize=16)
+        ax.set_xlabel('Packet Index', fontsize=16)
         plt.show()
 
 
-def AmpSubcarrierFlowPlotter(csi_df, isComp):
+def AmpSubcarrierFlowPlotter(csi_df):
 
-    if isComp == 'y':
-        csi_df = complexToAmp(csi_df)
+
+    csi_df = complexToAmp(csi_df)
 
     x = np.arange(0, 64, 1)
     y_list = []
@@ -78,7 +80,7 @@ def AmpSubcarrierFlowPlotter(csi_df, isComp):
     plt.ion()
 
     fig, ax = plt.subplots(figsize=(12, 8))
-    fig.suptitle('Amp-SubcarrierIdx plot')
+    fig.suptitle('Amp-SubcarrierIdx plot', fontsize=20)
     line, = ax.plot(x, y_list[0], alpha=0.5)
 
     plt.ylabel('Signal Amplitude', fontsize=16)
