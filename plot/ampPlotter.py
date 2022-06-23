@@ -107,7 +107,7 @@ def AmpSubcarrierPlotter(csi_df, sample_start, sample_end):
         packet_list.append(list(packet))
 
     fig, ax = plt.subplots(figsize=(12, 8))
-    fig.suptitle('Amp-SubcarrierIdx plot')
+    fig.suptitle('Amp-SubcarrierIdx plot', fontsize=20)
 
     for idx, sub in enumerate(packet_list):
         ax.plot(sub, alpha=0.5)
@@ -180,7 +180,7 @@ def AmpTimePlotter(csi_df, time_list, time_ms_list, spf_sub=None):
         # ============ Denoising with DWT ==================
 
         fig, ax = plt.subplots(figsize=(12, 8))
-        fig.suptitle('Amp-Time plot')
+        fig.suptitle('Amp-Time plot', fontsize=20)
         for sub_csi in sub_csi_list:
             ax.plot(sub_csi[1], alpha=0.5, label='sub ' + sub_csi[0])
         # rec = lowpassfilter(signal, 0.2)
@@ -198,7 +198,7 @@ def AmpTimePlotter(csi_df, time_list, time_ms_list, spf_sub=None):
         # ============ Denoising with DWT ==================
 
         fig, ax = plt.subplots(figsize=(12, 8))
-        fig.suptitle('Amp-Time plot')
+        fig.suptitle('Amp-Time plot', fontsize=20)
 
         for idx, sub in enumerate(subcarrier_list):
             ax.plot(sub, alpha=0.5, label=csi_df.columns[idx])

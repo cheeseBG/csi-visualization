@@ -27,6 +27,7 @@ def heatmap(csi_df, sample_start, sample_end):
     for col in df.columns:
         y_list.append(col)
 
+    plt.title('Amp-PacketIdx Heatmap', fontsize=20)
     plt.pcolor(x_list, y_list, df.transpose(), cmap='jet')
     cbar = plt.colorbar()
     cbar.set_label('Amplitude (dBm)')
@@ -37,8 +38,8 @@ def heatmap(csi_df, sample_start, sample_end):
 
     #plt.xticks(xtic)
     plt.yticks(ytic, [y_list[idx] for idx in [0, int(len(y_list)/4), int(len(y_list)/4*2), int(len(y_list)/4*3)]])
-    plt.xlabel('Packet Index')
-    plt.ylabel('Subcarrier Index')
+    plt.xlabel('Packet Index', fontsize=16)
+    plt.ylabel('Subcarrier Index', fontsize=16)
 
     plt.show()
 
@@ -108,6 +109,7 @@ def timeHeatmap(csi_df, time_list, time_ms_list):
     for col in csi_df.columns:
         y_list.append(col)
 
+    plt.title('Amp-Time Heatmap', fontsize=20)
     plt.pcolor(x_list, y_list, csi_df.transpose(), cmap='jet')
     cbar = plt.colorbar()
     cbar.set_label('Amplitude (dBm)')
@@ -117,8 +119,8 @@ def timeHeatmap(csi_df, time_list, time_ms_list):
     plt.xticks(new_idx_list, xtic_list, rotation=45)
     plt.yticks(ytic, [y_list[idx] for idx in [0, int(len(y_list)/4), int(len(y_list)/4*2), int(len(y_list)/4*3)]])
     #plt.xlabel('Time (s)')
-    plt.xlabel('Time')
-    plt.ylabel('Subcarrier Index')
+    plt.xlabel('Time',  fontsize=16)
+    plt.ylabel('Subcarrier Index',  fontsize=16)
 
     plt.show()
 
