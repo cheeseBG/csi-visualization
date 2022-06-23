@@ -34,20 +34,23 @@ sudo python3 csi_realTimePhase.py
 
 CSI explore
 -----
-1. Heatmap (Amplitude-Time)
 
-<img src="./asset/ampHeat.png" width="400" height="250"/>
-
+1. Amplitude-PacketIdx
+   <img src="./asset/ampPck.png" width="400" height="250"/>
+   
 2. Amplitude-Time
-
 <img src="./asset/ampPlot.png" width="400" height="250"/>
 
-3. Amplitude-SubcarrierIdx (all packet)
+3. Heatmap (Amplitude-Packet)
+<img src="./asset/ampPckHeat.png" width="400" height="250"/>
 
+4. Heatmap (Amplitude-Time)
+<img src="./asset/ampHeat.png" width="400" height="250"/>
+
+5. Amplitude-SubcarrierIdx (all packet)
 <img src="./asset/ampSub.png" width="400" height="250"/>
 
-4.Amplitude-SubcarrierIdx Flow (single antenna set)
-
+6.Amplitude-SubcarrierIdx Flow (single antenna set)
 <img src="./asset/ampSubFlow.gif" width="400" height="250"/>
 
 
