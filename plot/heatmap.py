@@ -34,7 +34,7 @@ def heatmap(csi_df, sample_start, sample_end):
 
     #xtic = np.arange(0, x_list[-1] + 1, 100)
     #xtic[0] = 1
-    ytic = np.arange(0, 52, 13)
+    ytic = np.arange(0, len(df.columns), 13)
 
     #plt.xticks(xtic)
     plt.yticks(ytic, [y_list[idx] for idx in [0, int(len(y_list)/4), int(len(y_list)/4*2), int(len(y_list)/4*3)]])
@@ -114,7 +114,7 @@ def timeHeatmap(csi_df, time_list, time_ms_list):
     cbar = plt.colorbar()
     cbar.set_label('Amplitude (dBm)')
 
-    ytic = np.arange(0, 52, 13)
+    ytic = np.arange(0, len(df.columns), 13)
 
     plt.xticks(new_idx_list, xtic_list, rotation=45)
     plt.yticks(ytic, [y_list[idx] for idx in [0, int(len(y_list)/4), int(len(y_list)/4*2), int(len(y_list)/4*3)]])
