@@ -13,7 +13,7 @@ Therefore, in order to use real-time plot and collect data for visualization, th
 ```
 pip install -r requirements.txt
 ```
-* If you want to use real-time plotter, clone this repo to the Raspberry Pi with Nexmon firmware installed.
+* If you want to use real-time plot, clone this repo to the Raspberry Pi with Nexmon firmware installed.
 
 ## Usage
 
