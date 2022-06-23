@@ -66,12 +66,11 @@ def AmpPlotter(csi_df, sample_start, sample_end, spf_sub_list=None):
         plt.show()
 
 
-def AmpSubcarrierFlowPlotter(csi_df):
-
-
+def AmpSubcarrierFlowPlotter(csi_df, sample_start, sample_end):
+    csi_df = csi_df[sample_start:sample_end]
     csi_df = complexToAmp(csi_df)
 
-    x = np.arange(0, 64, 1)
+    x = np.arange(0, len(csi_df.columns), 1)
     y_list = []
 
     for packet in np.array(csi_df):
@@ -99,10 +98,9 @@ def AmpSubcarrierFlowPlotter(csi_df):
         time.sleep(0.01)
 
 
-def AmpSubcarrierPlotter(csi_df, isComp):
-
-    if isComp == 'y':
-        csi_df = complexToAmp(csi_df)
+def AmpSubcarrierPlotter(csi_df, sample_start, sample_end):
+    csi_df = csi_df[sample_start:sample_end]
+    csi_df = complexToAmp(csi_df)
 
     packet_list = []
     for packet in np.array(csi_df):
@@ -119,9 +117,9 @@ def AmpSubcarrierPlotter(csi_df, isComp):
     plt.show()
 
 
-def AmpTimePlotter(csi_df, time_list, time_ms_list, isComp, spf_sub=None):
-    if isComp == 'y':
-        csi_df = complexToAmp(csi_df)
+def AmpTimePlotter(csi_df, time_list, time_ms_list, spf_sub=None):
+
+    csi_df = complexToAmp(csi_df)
 
     # Change time_ms_list to Unix Time
     ut_ms_list = []
@@ -174,16 +172,20 @@ def AmpTimePlotter(csi_df, time_list, time_ms_list, isComp, spf_sub=None):
     print('matching list {}'.format(xtic_list))
 
     if spf_sub is not None:
-        subcarrier = csi_df[spf_sub].to_list()
+        sub_csi_list = []
+
+        for sub in spf_sub:
+            sub_csi_list.append([sub, csi_df[sub].to_list()])
 
         # ============ Denoising with DWT ==================
-        signal = subcarrier
 
         fig, ax = plt.subplots(figsize=(12, 8))
         fig.suptitle('Amp-Time plot')
-        ax.plot(signal, color="b", alpha=0.5, label=spf_sub)
-        rec = lowpassfilter(signal, 0.2)
-        ax.plot(rec, 'k', label='DWT smoothing}', linewidth=2)
+        for sub_csi in sub_csi_list:
+            ax.plot(sub_csi[1], alpha=0.5, label='sub ' + sub_csi[0])
+        # rec = lowpassfilter(signal, 0.2)
+        # ax.plot(rec, 'k', label='DWT smoothing}', linewidth=2)
+        ax.legend()
         ax.set_xticks(new_idx_list, xtic_list, rotation=45)
         ax.set_ylabel('Signal Amplitude', fontsize=16)
         ax.set_xlabel('Time', fontsize=16)

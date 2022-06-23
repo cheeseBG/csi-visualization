@@ -22,7 +22,7 @@ python csiexplorer.py [CSI dir] --plt [Plot Type]
 ```
 * Use sample data for Amplitude-PacketIdx plot
 ```
-python csiexplorer.py sample --plt 1
+python csiexplorer.py sample --plt 1 --smp true
 ```
 * Use real-time Amplitude or Phase plot
 > After installing the Nexmon firmware on the Raspberry Pi and setting the monitoring mode, run the code below.

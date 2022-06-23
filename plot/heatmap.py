@@ -11,15 +11,11 @@ Plot
 '''
 
 
-def heatmap(csi_df, sample_start, sample_end, isComp, preprocess=False):
+def heatmap(csi_df, sample_start, sample_end):
 
     df = csi_df[sample_start:sample_end]
 
-    if isComp == 'y':
-        df = complexToAmp(df)
-
-    if preprocess is True:
-        df = data_preprocess(df)
+    df = complexToAmp(df)
 
     packet_idx = [i for i in range(1, len(df) + 1)]
 
@@ -35,11 +31,11 @@ def heatmap(csi_df, sample_start, sample_end, isComp, preprocess=False):
     cbar = plt.colorbar()
     cbar.set_label('Amplitude (dBm)')
 
-    xtic = np.arange(0, x_list[-1] + 1, 100)
-    xtic[0] = 1
+    #xtic = np.arange(0, x_list[-1] + 1, 100)
+    #xtic[0] = 1
     ytic = np.arange(0, 52, 13)
 
-    plt.xticks(xtic)
+    #plt.xticks(xtic)
     plt.yticks(ytic, [y_list[idx] for idx in [0, int(len(y_list)/4), int(len(y_list)/4*2), int(len(y_list)/4*3)]])
     plt.xlabel('Packet Index')
     plt.ylabel('Subcarrier Index')
@@ -47,9 +43,9 @@ def heatmap(csi_df, sample_start, sample_end, isComp, preprocess=False):
     plt.show()
 
 
-def timeHeatmap(csi_df, time_list, time_ms_list, isComp, preprocess=False):
-    if isComp == 'y':
-        csi_df = complexToAmp(csi_df)
+def timeHeatmap(csi_df, time_list, time_ms_list):
+
+    csi_df = complexToAmp(csi_df)
 
     # Change time_ms_list to Unix Time
     ut_ms_list = []
@@ -100,9 +96,6 @@ def timeHeatmap(csi_df, time_list, time_ms_list, isComp, preprocess=False):
             xtic_list.append(dtime.strftime("%H:%M:%S"))
 
     print('matching list {}'.format(xtic_list))
-
-    if preprocess is True:
-        csi_df = data_preprocess(csi_df)
 
     packet_idx = [i for i in range(1, len(csi_df) + 1)]
 
