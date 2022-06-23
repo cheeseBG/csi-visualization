@@ -1,6 +1,6 @@
 # CSI Visualization with Python
 
-📊 Channel State Information(CSI) visualization with python
+📊 Wi-Fi Channel State Information(CSI) visualization with python
 
 ## Before use
 This repo is based on CSI extracted with [Nexmon CSI Extractor](https://github.com/seemoo-lab/nexmon_csi)(Raspberry Pi, Wi-Fi chip: bcm43455c0).  
