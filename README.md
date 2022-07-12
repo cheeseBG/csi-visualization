@@ -5,7 +5,7 @@
 ## Before use
 This repo is based on CSI extracted with [Nexmon CSI Extractor](https://github.com/seemoo-lab/nexmon_csi)(Raspberry Pi, Wi-Fi chip: bcm43455c0).  
 Therefore, in order to use real-time plot and collect data for visualization, the Nexmon CSI extractor installation must be preceded.  
-(**The data collection repo will be updated soon**)
+(The csv data required by this repository can be obtained through [csi-extractor](https://github.com/cheeseBG/csi-extractor))
 
 ## Installation
 
