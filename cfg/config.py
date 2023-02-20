@@ -24,8 +24,8 @@ PLOT_PARAMETER = {
 # csi_visualization is using Nexmon CSI extractor (RPi version)
 EXTRACTOR_CONFIG = {
     'wifi_chip': 'bcm43455c0',  # Raspberry Pi B3+ / B4
-    'band': '2.4GHz',  # 5GHz
-    'bandwidth': '20MHz'  # 40, 80, 160
+    'band': '2.4GHz',  # Option: 2.4GHz, 5GHz
+    'bandwidth': '20MHz'  # Option: 20MHz, 40MHz, 80MHz, 160MHz
 }
 
 
