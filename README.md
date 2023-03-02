@@ -7,6 +7,9 @@ This repo is based on CSI extracted with [Nexmon CSI Extractor](https://github.c
 Therefore, in order to use real-time plot and collect data for visualization, the Nexmon CSI extractor installation must be preceded.  
 (The csv data required by this repository can be obtained through [csi-extractor](https://github.com/cheeseBG/csi-extractor))
 
+### 2023 Update
+- pcap format is also available
+
 ## Installation
 
 * Clone this repo and install the dependencies
