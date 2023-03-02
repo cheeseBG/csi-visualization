@@ -8,7 +8,7 @@ Therefore, in order to use real-time plot and collect data for visualization, th
 (The csv data required by this repository can be obtained through [csi-extractor](https://github.com/cheeseBG/csi-extractor))
 
 ### 2023 Update
-- pcap format is also available
+- ~~pcap format is also available~~(To be implemented)
 
 ## Installation
 
