@@ -1,4 +1,5 @@
 import argparse
+import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
 
@@ -22,3 +23,11 @@ def str2bool(v):
         return False
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
+
+
+def complexToAmp(comp_df):
+
+    comp_df = comp_df.astype('complex')
+    amp_df = comp_df.apply(np.abs, axis=1)
+
+    return amp_df

@@ -22,12 +22,9 @@ def lowpassfilter(signal, thresh=0.63, wavelet="db4"):
     return reconstructed_signal
 
 
-def AmpPlotter(csi_df, sample_start, sample_end, spf_sub_list=None):
+def AmpPlotter(csi_df, sample_start, sample_end, fname, spf_sub_list=None):
 
     csi_df = csi_df[sample_start:sample_end]
-
-    # Convert complex number to amplitude
-    csi_df = complexToAmp(csi_df)
 
     if spf_sub_list is not None:
         sub_csi_list = []
@@ -56,7 +53,7 @@ def AmpPlotter(csi_df, sample_start, sample_end, spf_sub_list=None):
         # ============ Denoising with DWT ==================
 
         fig, ax = plt.subplots(figsize=(12, 8))
-        fig.suptitle('Amp-PacketIdx plot', fontsize=20)
+        fig.suptitle(fname, fontsize=20)
 
         for idx, sub in enumerate(subcarrier_list):
             ax.plot(sub, alpha=0.5, label=csi_df.columns[idx])
@@ -68,8 +65,6 @@ def AmpPlotter(csi_df, sample_start, sample_end, spf_sub_list=None):
 
 def AmpSubcarrierFlowPlotter(csi_df, sample_start, sample_end):
     csi_df = csi_df[sample_start:sample_end]
-    csi_df = complexToAmp(csi_df)
-
     x = np.arange(0, len(csi_df.columns), 1)
     y_list = []
 
@@ -100,7 +95,6 @@ def AmpSubcarrierFlowPlotter(csi_df, sample_start, sample_end):
 
 def AmpSubcarrierPlotter(csi_df, sample_start, sample_end):
     csi_df = csi_df[sample_start:sample_end]
-    csi_df = complexToAmp(csi_df)
 
     packet_list = []
     for packet in np.array(csi_df):
@@ -117,9 +111,7 @@ def AmpSubcarrierPlotter(csi_df, sample_start, sample_end):
     plt.show()
 
 
-def AmpTimePlotter(csi_df, time_list, time_ms_list, spf_sub=None):
-
-    csi_df = complexToAmp(csi_df)
+def AmpTimePlotter(csi_df, time_list, time_ms_list, fname, spf_sub=None):
 
     # Change time_ms_list to Unix Time
     ut_ms_list = []
@@ -208,11 +200,3 @@ def AmpTimePlotter(csi_df, time_list, time_ms_list, spf_sub=None):
         ax.set_ylabel('Signal Amplitude', fontsize=16)
         ax.set_xlabel('Time', fontsize=16)
         plt.show()
-
-
-def complexToAmp(comp_df):
-
-    comp_df = comp_df.astype('complex')
-    amp_df = comp_df.apply(np.abs, axis=1)
-
-    return amp_df
