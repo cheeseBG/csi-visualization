@@ -8,6 +8,9 @@ PLOT_PARAMETER = {
     'del_null_sub': True,  # Delete null subcarriers
     'del_pilot_sub': True,  # Delete pilot subcarriers
 
+    'rmv_outlier': True,  # Remove outlier
+    'outlier_thres': 5000,  # outlier threshold
+
     'time': [
             '2022-06-08 17:50:00',  # Start
             '2022-06-08 17:51:00'   # End
@@ -24,7 +27,7 @@ PLOT_PARAMETER = {
 # csi_visualization is using Nexmon CSI extractor (RPi version)
 EXTRACTOR_CONFIG = {
     'wifi_chip': 'bcm43455c0',  # Raspberry Pi B3+ / B4
-    'band': '2.4GHz',  # Option: 2.4GHz, 5GHz
+    'band': '5GHz',  # Option: 2.4GHz, 5GHz
     'bandwidth': '20MHz'  # Option: 20MHz, 40MHz, 80MHz, 160MHz
 }
 

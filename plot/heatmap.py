@@ -11,11 +11,9 @@ Plot
 '''
 
 
-def heatmap(csi_df, sample_start, sample_end):
+def heatmap(csi_df, sample_start, sample_end, fname):
 
     df = csi_df[sample_start:sample_end]
-
-    df = complexToAmp(df)
 
     packet_idx = [i for i in range(1, len(df) + 1)]
 
@@ -27,7 +25,7 @@ def heatmap(csi_df, sample_start, sample_end):
     for col in df.columns:
         y_list.append(col)
 
-    plt.title('Amp-PacketIdx Heatmap', fontsize=20)
+    plt.title(fname, fontsize=20)
     plt.pcolor(x_list, y_list, df.transpose(), cmap='jet')
     cbar = plt.colorbar()
     cbar.set_label('Amplitude (dBm)')
@@ -37,7 +35,7 @@ def heatmap(csi_df, sample_start, sample_end):
     ytic = np.arange(0, len(df.columns), 13)
 
     #plt.xticks(xtic)
-    plt.yticks(ytic, [y_list[idx] for idx in [0, int(len(y_list)/4), int(len(y_list)/4*2), int(len(y_list)/4*3)]])
+    plt.yticks(ytic)
     plt.xlabel('Packet Index', fontsize=16)
     plt.ylabel('Subcarrier Index', fontsize=16)
 
@@ -45,8 +43,6 @@ def heatmap(csi_df, sample_start, sample_end):
 
 
 def timeHeatmap(csi_df, time_list, time_ms_list):
-
-    csi_df = complexToAmp(csi_df)
 
     # Change time_ms_list to Unix Time
     ut_ms_list = []
@@ -123,11 +119,3 @@ def timeHeatmap(csi_df, time_list, time_ms_list):
     plt.ylabel('Subcarrier Index',  fontsize=16)
 
     plt.show()
-
-
-def complexToAmp(comp_df):
-
-    comp_df = comp_df.astype('complex')
-    amp_df = comp_df.apply(np.abs, axis=1)
-
-    return amp_df

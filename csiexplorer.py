@@ -81,6 +81,13 @@ if __name__ == "__main__":
         # Remove MAC address, timestamp
         csi_df = df.iloc[:, 2:]
 
+        # Convert complex number to amplitude
+        csi_df = util.complexToAmp(csi_df)
+
+        # Remove outlier
+        if plot_params_dict['rmv_outlier'] is True:
+            csi_df = csi_df[(csi_df < plot_params_dict['outlier_thres'])]
+
         # Create timestamp list
         time_list = df['time'].tolist()
 
@@ -105,19 +112,19 @@ if __name__ == "__main__":
 
             # If use only few subcarriers
             if use_specific_sub is True:
-                AmpPlotter(csi_df, sample_start, sample_end, sub_list)
+                AmpPlotter(csi_df, sample_start, sample_end, sub_list, csi_fname)
             # Use all subcarriers
             else:
-                AmpPlotter(csi_df, sample_start, sample_end)
+                AmpPlotter(csi_df, sample_start, sample_end, csi_fname)
 
         # 2.Amplitude-Time
         elif plot_type_idx == 2:
             # If use only few subcarriers
             if use_specific_sub is True:
-                AmpTimePlotter(csi_df, time_list, time_ms_list, sub_list)
+                AmpTimePlotter(csi_df, time_list, time_ms_list, sub_list, csi_fname)
             # Use all subcarriers
             else:
-                AmpTimePlotter(csi_df, time_list, time_ms_list)
+                AmpTimePlotter(csi_df, time_list, time_ms_list, csi_fname)
 
         # 3.Amplitude - Packet Heatmap
         elif plot_type_idx == 3:
@@ -129,7 +136,7 @@ if __name__ == "__main__":
                 sample_start = 0
                 sample_end = len(csi_df)
 
-            heatmap(csi_df, sample_start, sample_end)
+            heatmap(csi_df, sample_start, sample_end, csi_fname)
 
         # 4.Amplitude-Time Heatmap
         elif plot_type_idx == 4:
@@ -158,5 +165,3 @@ if __name__ == "__main__":
                 sample_end = len(csi_df)
 
             AmpSubcarrierFlowPlotter(csi_df, sample_start, sample_end)
-
-
